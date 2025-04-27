@@ -18,6 +18,12 @@ public class Touch : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        collision.gameObject.SetActive(false);
+        if(collision.gameObject.CompareTag("Candy"))
+        {
+            Destroy(collision.gameObject);
+            //todo: score
+            //todo: animation
+            //todo: sound
+        }
     }
 }
